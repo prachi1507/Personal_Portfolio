@@ -34,8 +34,8 @@ The deployable website is generated in `dist/`. For Vercel, select the Vite fram
 - `src/Animation.jsx`: reusable motion components for the introduction, links, project previews, statistics, and cursor glow.
 - `src/ProjectPreviews.jsx`: custom interface concepts. The previews contain illustrative data and are labelled accordingly; they are not screenshots of the original applications.
 - `src/project-previews.css`: the small interface elements inside those project concepts.
-- `public/Prachi_Resume.pdf`: the downloadable resume.
-- `resume/Prachi_Resume.html`: printable resume source, updated from the supplied resume text. After editing, run `npm.cmd run build:resume` (requires Google Chrome), then `npm.cmd run build` to include the PDF in the production output. The PDF generator keeps the previous resume in `.artifacts/resume-update/Prachi_Resume.original.pdf`.
+- `public/Prachi_Resume.pdf`: the exact supplied resume used for downloads.
+- `resume/Prachi_Resume.html`: an optional printable resume source, updated from the supplied resume text. Running `npm.cmd run build:resume` (requires Google Chrome) regenerates `public/Prachi_Resume.pdf`, so only use it when you intend to replace the supplied PDF. The generator keeps the previous resume in `.artifacts/resume-update/Prachi_Resume.original.pdf`.
 
 Fonts are bundled locally. No stock photography, external image requests, tracking scripts, or form backend is used. Contact actions open an email client or copy the address; no messages are sent automatically. The Skyline website URL and profile links come from the resume. A live URL for the customer support project was not supplied, so its detail panel links to an email enquiry.
 
