@@ -18,17 +18,18 @@ import {
 
 const Sculpture = lazy(() => import("./Sculpture.jsx"));
 const email = "kprachimth@gmail.com";
+const resumeUrl = "/Prachi_Resume.pdf";
 const projects = [
   {
     name: "Skyline CRM AI",
     type: "FULL-STACK DEVELOPMENT · AI INTEGRATION",
     description:
-      "A smarter workspace for leads, relationships, and the next big deal.",
+      "An AI-powered CRM for leads, sales pipelines, contacts, tasks, and analytics.",
     overview:
-      "A cloud-based CRM SaaS platform that brings lead management, sales pipelines, contacts, tasks, and analytics into one workspace. Google Gemini adds lead summaries, email generation, and sales insights.",
-    stack: ["React", "Node.js", "MongoDB", "Gemini API"],
+      "A cloud-based AI-powered CRM SaaS platform for lead management, sales pipelines, contacts, tasks, and analytics. Integrated Google Gemini for AI-driven lead summaries, email generation, and sales insights with secure multi-tenant architecture.",
+    stack: ["React.js", "Node.js", "MongoDB", "Google Gemini API"],
     allStack: [
-      "React",
+      "React.js",
       "Express.js",
       "Node.js",
       "MongoDB",
@@ -43,25 +44,23 @@ const projects = [
       "React Testing Library",
     ],
     details: [
-      "Built lead, contact, task, and sales pipeline workflows.",
-      "Integrated AI-generated summaries, emails, and sales insights.",
-      "Implemented secure multi-tenant architecture and real-time capabilities.",
-      "Used containerised deployment and automated delivery workflows.",
+      "Built lead management, sales pipelines, contacts, tasks, and analytics in one cloud-based platform.",
+      "Integrated Google Gemini for AI-driven lead summaries, email generation, and sales insights.",
+      "Implemented secure multi-tenant architecture for the CRM SaaS platform.",
     ],
     link: "https://skylinedeals.in/",
     Preview: CrmPreview,
   },
   {
-    name: "Customer Support SaaS",
+    name: "Customer Support SaaS Platform",
     type: "PRODUCT ENGINEERING · GENERATIVE AI",
     description:
-      "Thoughtful automation that brings the human side back to customer support.",
+      "AI-powered customer support with dynamic workflows and optimized content delivery.",
     overview:
-      "An AI-powered customer support platform that automates ticket management with LLM-driven intent classification, contextual response generation, and intelligent escalation workflows.",
-    stack: ["Next.js", "Node.js", "MongoDB", "OpenAI API"],
+      "A full-stack AI-powered customer support SaaS platform built with Next.js, implementing Server-Side Rendering (SSR) for dynamic workflows and Static Site Generation (SSG) for optimized content delivery.",
+    stack: ["Next.js", "MongoDB", "OpenAI API", "SSR / SSG"],
     allStack: [
       "Next.js",
-      "Node.js",
       "MongoDB",
       "OpenAI API",
       "GitHub APIs",
@@ -71,10 +70,9 @@ const projects = [
       "JWT",
     ],
     details: [
-      "Developed intent classification and contextual response generation.",
-      "Built intelligent escalation and ticket management workflows.",
-      "Supported secure multi-role access and real-time collaboration.",
-      "Integrated analytics and cloud-native deployment workflows.",
+      "Developed a full-stack AI-powered customer support SaaS platform using Next.js.",
+      "Implemented Server-Side Rendering (SSR) for dynamic workflows.",
+      "Used Static Site Generation (SSG) for optimized content delivery.",
     ],
     Preview: SupportPreview,
   },
@@ -90,10 +88,11 @@ const skillGroups = [
       "Next.js",
       "TypeScript",
       "Redux Toolkit",
-      "JavaScript",
-      "HTML & CSS",
+      "JavaScript (ES6+)",
+      "HTML5 & CSS3",
       "D3.js",
       "Responsive UI",
+      "SSR & SSG",
     ],
   },
   {
@@ -122,7 +121,7 @@ const skillGroups = [
       "LLM integration",
       "Google Gemini API",
       "OpenAI API",
-      "Intent classification",
+      "Third-party AI APIs",
       "AI-powered workflows",
     ],
   },
@@ -291,7 +290,7 @@ function Hero() {
               <MagneticLink className="button button-mint" href="#work">
                 Explore my work <Icon name="down" size={18} />
               </MagneticLink>
-              <a className="text-link" href="/Prachi_Resume.pdf" download>
+              <a className="text-link" href={resumeUrl} download="Prachi_Resume.pdf">
                 Download resume <Icon name="download" size={17} />
               </a>
             </div>
@@ -300,7 +299,7 @@ function Hero() {
                 <Icon name="layers" size={19} />
               </span>
               <p>
-                <strong>3+ years of building with purpose.</strong>
+                <strong>3.5 years of building with purpose.</strong>
                 <span>From the first idea to the final detail.</span>
               </p>
             </div>
@@ -626,9 +625,9 @@ function About() {
               <br />I love making them work better.
             </p>
             <p>
-              I’m a full-stack software engineer based in Pune, with 3+ years of
-              experience building web applications and AI-integrated SaaS
-              products.
+              I’m a full-stack software engineer based in Pune, with 3.5 years of
+              experience building scalable MERN stack applications and
+              AI-integrated SaaS solutions across the software development lifecycle.
             </p>
             <p>
               From a responsive React interface to the API behind it, I enjoy
@@ -637,7 +636,7 @@ function About() {
             </p>
             <div className="about-facts">
               <div>
-                <CountUp value={3} suffix="+" />
+                <CountUp value={3.5} decimals={1} />
                 <span>YEARS OF EXPERIENCE</span>
               </div>
               <div>
@@ -750,7 +749,7 @@ function Experience() {
             <span className="serif">Always growing.</span>
           </h2>
         </div>
-        <a className="text-link" href="/Prachi_Resume.pdf" download>
+        <a className="text-link" href={resumeUrl} download="Prachi_Resume.pdf">
           Get the full resume <Icon name="download" size={17} />
         </a>
       </Reveal>
@@ -775,6 +774,10 @@ function Experience() {
               <li>
                 Developed frontend and backend features with React, Redux
                 Toolkit, TypeScript, Node.js, Express.js, and MongoDB.
+              </li>
+              <li>
+                Built Next.js applications using server-side rendering (SSR)
+                and static site generation (SSG).
               </li>
               <li>
                 Reduced page load time by approximately 30% through code
@@ -803,22 +806,26 @@ function Experience() {
             <span className="details-toggle" aria-hidden="true" />
           </summary>
           <div className="experience-description">
-            <p>
-              Developed web applications for workforce management, AI chatbots,
-              and QA automation solutions.
-            </p>
             <ul>
               <li>
-                Built reusable React components, including modals, charts, and
-                data tables.
+                <strong>Application Development:</strong> Developed clean,
+                scalable application code using JavaScript (ES6+), TypeScript,
+                SOLID principles, and design patterns.
               </li>
               <li>
-                Applied JavaScript, TypeScript, SOLID principles, and design
-                patterns to scalable application code.
+                <strong>Product Engineering:</strong> Built responsive web
+                applications for workforce management platforms, AI chatbots,
+                and QA automation solutions.
               </li>
               <li>
-                Worked with Docker environments and supported Git-based CI/CD
-                workflows.
+                <strong>UI Development:</strong> Created reusable React.js
+                components, including modals, charts, and data tables, enhancing
+                user experience and interface responsiveness.
+              </li>
+              <li>
+                <strong>DevOps & CI/CD Support:</strong> Worked in Docker-based
+                environments and supported CI/CD pipelines through Git-based
+                version control & automated deployment workflows.
               </li>
             </ul>
             <div className="tags">
@@ -839,22 +846,18 @@ function Experience() {
             <span className="details-toggle" aria-hidden="true" />
           </summary>
           <div className="experience-description">
-            <p>
-              Developed and maintained responsive web application features with
-              JavaScript, React, HTML, and CSS.
-            </p>
             <ul>
               <li>
-                Supported REST API integration, debugging, and bug fixes.
-              </li>
-              <li>
-                Collaborated with the development team on code reviews and Agile
-                delivery.
+                <strong>API Integration & Engineering Quality:</strong> Integrated
+                RESTful APIs and contributed to debugging, performance
+                optimization, code reviews, and reusable component development
+                while following Agile, Git, CI/CD, and modern software engineering
+                best practices.
               </li>
             </ul>
             <div className="tags">
-              <span>Frontend development</span>
               <span>API integration</span>
+              <span>Engineering quality</span>
               <span>Agile delivery</span>
             </div>
           </div>
@@ -968,7 +971,7 @@ function Contact() {
               >
                 LinkedIn <Icon size={15} />
               </a>
-              <a href="/Prachi_Resume.pdf" download>
+              <a href={resumeUrl} download="Prachi_Resume.pdf">
                 Resume <Icon name="download" size={15} />
               </a>
             </div>

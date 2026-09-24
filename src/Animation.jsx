@@ -144,7 +144,7 @@ export function TiltPreview({ project, onOpen }) {
   );
 }
 
-export function CountUp({ value, prefix = "", suffix = "" }) {
+export function CountUp({ value, prefix = "", suffix = "", decimals = 0 }) {
   const ref = useRef(null);
   const visible = useInView(ref, { once: true, amount: 0.8 });
   const reduce = useReducedMotion();
@@ -158,10 +158,10 @@ export function CountUp({ value, prefix = "", suffix = "" }) {
     const control = animate(0, value, {
       duration: 1.65,
       ease: [0.22, 1, 0.36, 1],
-      onUpdate: (current) => setDisplay(Math.round(current)),
+      onUpdate: (current) => setDisplay(Number(current.toFixed(decimals))),
     });
     return () => control.stop();
-  }, [visible, reduce, value]);
+  }, [visible, reduce, value, decimals]);
   return (
     <strong ref={ref}>
       <span className="sr-only">

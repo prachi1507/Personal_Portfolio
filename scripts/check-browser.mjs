@@ -73,9 +73,10 @@ try {
   await expect(dialog).not.toBeVisible();
   await expect(openProject).toBeFocused();
   await page
-    .getByRole("button", { name: "Explore Customer Support SaaS", exact: true })
+    .getByRole("button", { name: "Explore Customer Support SaaS Platform", exact: true })
     .click();
-  await expect(dialog).toContainText("intent classification");
+  await expect(dialog).toContainText("Server-Side Rendering (SSR)");
+  await expect(dialog).toContainText("Static Site Generation (SSG)");
   await dialog.getByRole("button", { name: "Close project details" }).click();
   await expect(dialog).not.toBeVisible();
   report.push(
@@ -91,6 +92,8 @@ try {
   ).toBeFocused();
   await expect(page.getByRole("tabpanel")).toContainText("Google Gemini API");
   await page.getByRole("tab", { name: "Frontend", exact: true }).click();
+  await expect(page.locator(".about-facts .count-value").first()).toHaveText("3.5");
+  await expect(page.locator(".about-facts .count-value").nth(1)).toHaveText("~30%");
   const pastJob = page.locator("details").nth(1);
   await pastJob.locator("summary").click();
   await expect(pastJob).toHaveAttribute("open", "");
@@ -193,6 +196,9 @@ try {
   await expect(
     page.getByRole("button", { name: "Explore Skyline CRM AI", exact: true }),
   ).toBeVisible();
+  await page.locator(".about-facts").scrollIntoViewIfNeeded();
+  await expect(page.locator(".about-facts .count-value").first()).toHaveText("3.5");
+  await expect(page.locator(".about-facts .count-value").nth(1)).toHaveText("~30%");
   report.push("Standard motion and reduced-motion modes both render.");
   if (!audit.violations.length)
     report.push("Automated WCAG accessibility checks passed.");
